@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" href="styles/examples.css">
+    
+    <!-- <script type="text/javascript" src="lib/jquery-2.1.1.min.js"></script> -->
+     <script src="https://rawgit.com/AnqiBai/tempHosting/master/jquery-2.1.1.min.js"></script>
+   <!--  <script src="lib/cssmenu.js"></script> -->
+    <script src='https://rawgit.com/AnqiBai/tempHosting/master/cssmenu.js'></script>
+    <!--  <script src="lib/d3.min.js"></script>  -->
+    <script src="https://rawgit.com/AnqiBai/tempHosting/master/d3.min.js"></script>
+
+    <!-- <script src="lib/vizuly_core.min.js"></script>
+    <script src="lib/vizuly_weightedtree.min.js"></script> -->
+   
+    <script src="https://rawgit.com/AnqiBai/tempHosting/master/vizuly_core.min.js"></script>
+    <script src="https://rawgit.com/AnqiBai/tempHosting/master/vizuly_weightedtree.min.js"></script>
+
+    <script src="weightedtree_test.js"></script> 
+
+
+</head>
+
+<body>
+    <!-- Our main content container-->
+    <a href="../../../index.html"><h5>back to VIZ list</h5></a>
+    <div class="container" style="width:100%">
+    <div id='cssmenu'>
+                <ul class="main-menu">
+                    <li class='active'>
+                        <a><span>Display</span><br><span class="setting"></span></a>
+                        <ul class="options" callback="changeSize">
+                            <li id="currentDisplay" class="selected"><a></a></li>
+                            <li item_value="1000,1000"><a>1000px - 1000px</a></li>
+                            <li item_value="800,600"><a>800px - 600px</a></li>
+                            <li item_value="375,667"><a>375px - 667px</a></li>
+                            <li item_value="1000,600"><a>1000px - 600px</a></li>
+                            <li item_value='800,500'><a>800px - 500px</a></li>
+                        </ul>
+                    </li>
+                    <li class='active'><a><span class="label">Data </span><br><span class="setting"></span></a>
+                        <ul class="options" callback="changeData">
+                            <li item_value="0" class="selected"><a>Federal</a></li>
+                            <li item_value="1"><a>State</a></li>
+                            <li item_value="2"><a>Local</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        <div id="viz_container" class="z-depth-3">
+            
+        </div>
+    </div>
+</body>
+
+</html>

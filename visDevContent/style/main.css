@@ -1,0 +1,15 @@
+body {
+	font-family: Tahoma;
+}
+
+h3 {
+	font-family: Tahoma;
+}
+
+h4.local {
+    color: orange; 
+}
+
+h4.bug {
+	color: brown;
+}
