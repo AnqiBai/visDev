@@ -1,5 +1,5 @@
 
-Plotly.d3.csv('./data/gapminderDataFiveYear.csv.txt', function(err, rows){
+Plotly.d3.csv('./data/gapminderDataFiveYear.csv', function(err, rows){
 
 var YEAR = 2007;
 var continents = ['Asia', 'Europe', 'Africa', 'Oceania', 'Americas'];
@@ -28,8 +28,15 @@ var data = continents.map(function(continent) {
 var layout = {
   xaxis: {title: 'Life Expectancy'},
   yaxis: {title: 'GDP per Capita', type: 'log'},
+  height: 600,
   margin: {t: 20},
   hovermode: 'closest'
 };
-Plotly.plot('my-graph', data, layout, {showLink: false});
+
+var plotlyConfig = {
+   modeBarButtonsToRemove: ['sendDataToCloud', 'hoverCompareCartesian'],
+   showLink: false,
+   displaylogo:false
+};
+Plotly.plot('my-graph', data, layout, plotlyConfig);
 });

@@ -3,18 +3,18 @@
 // Each yz[i] is an array of m non-negative numbers representing a y-value for xz[i].
 // The y01z array has the same structure as yz, but with stacked [y₀, y₁] instead of y.
 
-var anqi = d3.csv("./data/twoStyleBars.csv", function(data) {
+var attributeList = d3.csv("./data/twoStyleBars.csv", function(data) {
 
     // get base attribute list 
-    var anqi = data.map(d => d[data['columns'][0]])
-    var uniqueArray = anqi.filter(function(item, pos) {
-        return anqi.indexOf(item) == pos;
+    var attributeList = data.map(d => d[data['columns'][0]])
+    var uniqueArray = attributeList.filter(function(item, pos) {
+        return attributeList.indexOf(item) == pos;
     });
     var xLabel = uniqueArray;
 
     var xz = d3.range(xLabel.length);
 
-    var n = anqi.filter(function(d) { return d == anqi[0] }).length;
+    var n = attributeList.filter(function(d) { return d == attributeList[0] }).length;
     var yz = [];
     var metricLoc = data['columns'].length - 1; 
     for (var iCategory = 0; iCategory < n; iCategory++) {
@@ -84,14 +84,14 @@ var anqi = d3.csv("./data/twoStyleBars.csv", function(data) {
         .on("change", changed);
 
 
-    var timeout = d3.timeout(function() {
-        d3.select("input[value=\"grouped\"]")
-            .property("checked", true)
-            .dispatch("change");
-    }, 2000);
+    // var timeout = d3.timeout(function() {
+    //     d3.select("input[value=\"grouped\"]")
+    //         .property("checked", true)
+    //         .dispatch("change");
+    // }, 1000);
 
     function changed() {
-        timeout.stop();
+      //  timeout.stop();
         if (this.value === "grouped") transitionGrouped();
         else transitionStacked();
     }
